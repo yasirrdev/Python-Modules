@@ -55,6 +55,7 @@ class Flower(Plant):
         return self._color
 
     def bloom(self) -> str:
+        """Return a string indicating the flower is blooming."""
         return f"The {self.color} {self.name} is blooming!"
 
 
@@ -72,6 +73,7 @@ class Tree(Plant):
         return self._trunk_diameter
 
     def produce_shade(self) -> str:
+        """"Return a string indicating the tree is providing shade."""
         return (
             f"The {self.name} tree is providing shade with a trunk "
             f"diameter of {self.trunk_diameter}cm."

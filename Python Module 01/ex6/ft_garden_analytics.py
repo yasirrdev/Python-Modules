@@ -72,3 +72,16 @@ class GardenManager:
         """Count the number of plants in the given list."""
         return len(plants)
 
+
+if __name__ == "__main__":
+
+    manager = GardenManager.create_garden_network()
+
+    for garden in manager.gardens:
+        avg_height = manager.stats.average_height(garden.plants)
+        count = manager.stats.count_plants(garden.plants)
+
+        print(f"Garden: {garden.name}")
+        print(f"Plants: {count}")
+        print(f"Average height: {GardenManager.format_height(avg_height)}")
+        print()
