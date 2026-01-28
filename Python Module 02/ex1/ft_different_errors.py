@@ -1,4 +1,5 @@
 def garden_operations():
+    """"Simulate garden operations that raise different types of errors."""
     print("Testing ValueError...")
     try:
         int("abc")
@@ -34,10 +35,7 @@ def garden_operations():
 
 
 def test_error_types():
+    """"Test various error types in garden operations."""
     print("=== Garden Error Types Demo ===")
     garden_operations()
     print("All error types tested successfully!")
-
-
-if __name__ == "__main__":
-    test_error_types()

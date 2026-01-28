@@ -1,4 +1,5 @@
 def check_temperature(temp_str: str) -> int:
+    """Check if the temperature input is valid for plants."""
     try:
         temp = int(temp_str)
     except ValueError:
@@ -11,7 +12,7 @@ def check_temperature(temp_str: str) -> int:
 
 
 def test_temperature_input():
-
+    """Test the temperature input function."""
     print("=== Garden Temperature Checker ===")
 
     tests = [
