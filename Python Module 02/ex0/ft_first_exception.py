@@ -3,7 +3,7 @@ def check_temperature(temp_str: str) -> int:
     try:
         temp = int(temp_str)
     except ValueError:
-        raise ValueError(f"Invalid temperature value: '{temp_str}'")
+        raise ValueError(f"Invalid temperature value: '{temp_str}'!")
     if temp > 40:
         raise ValueError(f"{temp}°C is too high for plants! (max 40°C)")
     if temp < 0:
