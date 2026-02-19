@@ -26,7 +26,6 @@ if __name__ == "__main__":
     for name, height, age in plant_data:
         plant = Plant(name, height, age)
         plants.append(plant)
-        # Append sirve para meter la planta en la lista
         print(f"Created: {plant.get_info()}")
 
     print(f"\nTotal plants created: {len(plants)}")

@@ -74,7 +74,7 @@ class GardenManager:
 
 
 if __name__ == "__main__":
-
+    
     manager = GardenManager.create_garden_network()
 
     for garden in manager.gardens:
@@ -85,3 +85,4 @@ if __name__ == "__main__":
         print(f"Plants: {count}")
         print(f"Average height: {GardenManager.format_height(avg_height)}")
         print()
+

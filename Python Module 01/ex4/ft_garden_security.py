@@ -3,8 +3,8 @@ class Plant:
 
     def __init__(self, name: str, height: int, age: int) -> None:
         self.name = name
-        self.height = height if height >= 0 else 0
-        self.age = age if age >= 0 else 0
+        self._height = height if height >= 0 else 0
+        self._age = age if age >= 0 else 0
 
     def get_name(self):
         return self.name
@@ -13,29 +13,29 @@ class Plant:
         self.name = value
 
     def get_height(self):
-        return self.height
+        return self._height
 
     def set_height(self, value):
-        self.height = value
+        self._height = value if value >= 0 else 0
 
     def get_age(self):
-        return self.age
+        return self._age
 
     def set_age(self, value):
-        self.age = value
+        self._age = value if value >= 0 else 0
 
     def grow(self, cm: int) -> None:
         """Simulate the growth of the plant over a number of days."""
         if cm > 0:
-            self.height += cm
+            self._height += cm
 
     def age_one_day(self) -> None:
         """Simulate the aging of the plant by one day."""
-        self.age += 1
+        self._age += 1
 
     def get_info(self) -> str:
         """Return a string representation of the plant's information."""
-        return f"{self.name}: {self.height}cm, {self.age} days old"
+        return f"{self.name}: {self._height}cm, {self._age} days old"
 
 
 if __name__ == "__main__":
