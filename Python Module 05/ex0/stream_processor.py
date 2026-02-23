@@ -1,14 +1,15 @@
 from abc import ABC, abstractmethod
+from typing import Any
 
 
 class DataProcessor(ABC):
 
     @abstractmethod
-    def process(self, data: any) -> str:
+    def process(self, data: Any) -> str:
         pass
 
     @abstractmethod
-    def validate(self, data: any) -> bool:
+    def validate(self, data: Any) -> bool:
         pass
 
     def format_output(self, result: str) -> str:
@@ -17,7 +18,7 @@ class DataProcessor(ABC):
 
 class NumericProcessor(DataProcessor):
 
-    def validate(self, data: any) -> bool:
+    def validate(self, data: Any) -> bool:
 
         if not isinstance(data, list):
             raise ValueError("Data must be a list of numbers.")
@@ -49,7 +50,7 @@ class NumericProcessor(DataProcessor):
 
 class TextProcessor(DataProcessor):
 
-    def validate(self, data: any) -> bool:
+    def validate(self, data: Any) -> bool:
 
         if not isinstance(data, str):
             raise ValueError("Data must be a string.")
@@ -75,7 +76,7 @@ class TextProcessor(DataProcessor):
 
 class LogProcessor(DataProcessor):
 
-    def validate(self, data: any) -> bool:
+    def validate(self, data: Any) -> bool:
 
         if not isinstance(data, str):
             raise ValueError("Log entry must be a string.")
@@ -91,7 +92,7 @@ class LogProcessor(DataProcessor):
         print("Validation: Log entry verified.")
         return True
 
-    def process(self, data: any) -> str:
+    def process(self, data: Any) -> str:
         print("Initializing Log Processor...")
         print("Processing data: ", data)
         try:
