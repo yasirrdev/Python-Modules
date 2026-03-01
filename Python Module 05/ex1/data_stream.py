@@ -49,22 +49,23 @@ class SensorStream(DataStream):
             avg_temp = sum(temps) / len(temps) if temps else 0
 
             return (
-                f"Sensor analysis: {len(data_batch)} readings processed, "
-                f"avg temp: {avg_temp:.1f}°C"
+                f"Sensor analysis: {len(data_batch)} readings "
+                f"processed, avg temp: {avg_temp:.1f}°C"
             )
 
         except Exception as e:
             return f"Sensor processing failed: {e}"
 
-    def filter_data(self, data_batch: List[Any], criteria: Optional[str]
-                    ) -> List[Any]:
+    def filter_data(
+            self, data_batch: List[Any],
+            criteria: Optional[str]) -> List[Any]:
 
         if criteria == "high_temp":
             return [
-                    item for item in data_batch 
-                    if item.startswith("temp:") and
-                    float(item.split(":")[1]) > 30
-                ]
+                item for item in data_batch
+                if item.startswith("temp:") and
+                float(item.split(":")[1]) > 30
+            ]
 
         return super().filter_data(data_batch, criteria)
 
@@ -85,21 +86,22 @@ class TransactionStream(DataStream):
                 elif action == "sell":
                     total_amount -= value
             return (
-                f"Transaction analysis: {len(data_batch)} operations, "
-                f"net flow: {total_amount:+.0f} units"
+                f"Transaction analysis: {len(data_batch)} "
+                f"operations, net flow: {total_amount:+.0f} units"
             )
 
         except Exception as e:
             return f"Transaction processing failed: {e}"
 
-    def filter_data(self, data_batch: List[Any], criteria: Optional[str]
-                    ) -> List[Any]:
+    def filter_data(
+            self, data_batch: List[Any],
+            criteria: Optional[str]) -> List[Any]:
 
         if criteria == "large":
             return [
-                    item for item in data_batch 
-                    if float(item.split(":")[1]) > 100
-                ]
+                item for item in data_batch
+                if float(item.split(":")[1]) > 100
+            ]
 
         return super().filter_data(data_batch, criteria)
 
@@ -116,17 +118,20 @@ class EventStream(DataStream):
             )
             return (
                 f"Event analysis: {len(data_batch)} events, "
-                f"{error_count} error detected"
+                f"{error_count} errors detected"
             )
         except Exception as e:
             return f"Event processing failed: {e}"
 
-    def filter_data(self, data_batch: List[Any], criteria: Optional[str]
-                    ) -> List[Any]:
+    def filter_data(
+            self, data_batch: List[Any],
+            criteria: Optional[str]) -> List[Any]:
 
         if criteria == "critical":
             return [
-               item for item in data_batch if item.lower() == "error"]
+                item for item in data_batch
+                if item.lower() == "error"
+            ]
 
         return super().filter_data(data_batch, criteria)
 
