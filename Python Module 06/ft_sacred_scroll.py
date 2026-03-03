@@ -1,22 +1,35 @@
 import alchemy
+import alchemy.elements
 
 
 def main():
-    print(f"Alchemy Module Version: {alchemy.__version__}")
-    print(f"Author: {alchemy.__author__}")
+    print("=== Sacred Scroll Mastery ===")
+
+    print("\nTesting direct module access:")
+    print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")
+    print(f"alchemy.elements.create_water():"
+          f" {alchemy.elements.create_water()}")
+    print(f"alchemy.elements.create_earth():"
+          f" {alchemy.elements.create_earth()}")
+    print(f"alchemy.elements.create_air(): {alchemy.elements.create_air()}")
+
+    print("\nTesting package-level access (controlled by __init__.py):")
+    print(f"alchemy.create_fire(): {alchemy.create_fire()}")
+    print(f"alchemy.create_water(): {alchemy.create_water()}")
 
     try:
-        fire = alchemy.create_fire()
-        water = alchemy.create_water()
-        earth = alchemy.create_earth()
-        air = alchemy.create_air()
+        alchemy.create_earth()
+    except AttributeError:
+        print("alchemy.create_earth(): AttributeError - not exposed")
 
-        print(f"Created elements: {fire}, {water}, {earth}, {air}")
+    try:
+        alchemy.create_air()
+    except AttributeError:
+        print("alchemy.create_air(): AttributeError - not exposed")
 
-    except AttributeError as e:
-        print(f"Element creation failed: {e}")
-    except Exception as e:
-        print(f"An error occurred while creating elements: {e}")
+    print("\nPackage metadata:")
+    print(f"Version: {alchemy.__version__}")
+    print(f"Author: {alchemy.__author__}")
 
 
 if __name__ == "__main__":
