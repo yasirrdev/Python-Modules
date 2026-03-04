@@ -22,7 +22,7 @@ class SpellCard(Card):
             'effect': effects.get(self.effect_type, self.effect_type)
         }
 
-    def resolve_effect(self, targets: list) -> dict:
+    def resolve_effect(self, targets: list[Card]) -> dict:
         return {
             'spell': self.name,
             'targets': targets,
