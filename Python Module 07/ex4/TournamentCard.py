@@ -53,7 +53,7 @@ class TournamentCard(Card, Combatable, Rankable):
 
     def update_losses(self, losses: int) -> None:
         self.losses += losses
-        self.rating -= losses * 16
+        self.rating -= losses * 66
 
     def get_rank_info(self) -> dict:
         return {
