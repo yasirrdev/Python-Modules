@@ -4,7 +4,6 @@ def main():
 
     try:
         file = open("ancient_fragment.txt", "r")
-        # r sirve para abrir el archivo en modo lectura
         print("Connection established...")
         data = file.read()
         print("RECOVERED DATA:")

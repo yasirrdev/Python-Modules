@@ -1,11 +1,11 @@
 from ex4.TournamentCard import TournamentCard
-from ex4.TournamentPlataform import TournamentPlataform
+from ex4.TournamentPlatform import TournamentPlatform
 
 
 def main():
     print("=== DataDeck Tournament Platform ===")
 
-    platform = TournamentPlataform()
+    platform = TournamentPlatform()
 
     print("\nRegistering Tournament Cards...")
     dragon = TournamentCard("Fire Dragon", 5, "Legendary", 7, 5)

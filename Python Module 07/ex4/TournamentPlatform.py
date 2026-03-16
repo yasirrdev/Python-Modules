@@ -1,7 +1,7 @@
 from ex4.TournamentCard import TournamentCard
 
 
-class TournamentPlataform:
+class TournamentPlatform:
 
     def __init__(self):
         self.cards: dict[str, TournamentCard] = {}
@@ -61,5 +61,5 @@ class TournamentPlataform:
             'total_cards': total,
             'matches_played': len(self.matches),
             'avg_rating': avg,
-            'plataform_status': 'active'
+            'platform_status': 'active'
         }
