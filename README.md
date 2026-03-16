@@ -1,99 +1,86 @@
-# 🐍 Python Learning Modules
+# Python Modules — 42 School Curriculum
 
-This repository contains a collection of Python modules developed as part of my learning journey.
-Each module focuses on a specific Python concept, ranging from basic error handling to advanced
-data processing techniques used in data engineering and analytics.
-
-The goal of this repository is to **practice Python fundamentals in a structured and progressive way**
-using real-world inspired exercises.
+A structured collection of Python exercises completed as part of the 42 School curriculum.
+Each module introduces progressively advanced concepts, from object-oriented fundamentals
+to production-grade data validation and environment management.
 
 ---
 
-## 📂 Project Structure
+## Curriculum Overview
 
-Each module is organized into its own directory and contains multiple exercises:
+### Module 01 — The Garden · *Object-Oriented Programming*
+Introduction to Python classes and OOP principles. Covers constructors, instance methods,
+encapsulation with properties, inheritance chains, and class/static methods through a
+garden simulation.
 
+### Module 02 — Cyber Archives · *Exception Handling*
+Mastery of Python's error system. Covers try/except/finally blocks, custom exception
+hierarchies, raising errors with meaningful messages, and building fault-tolerant programs
+that recover gracefully from unexpected input.
+
+### Module 03 — Command Quest · *Data Structures & Arguments*
+Working with Python's core data structures in practical scenarios. Covers sys.argv
+argument parsing, list/dict/set comprehensions, generators with yield, and analytics
+pipelines processing command-line input.
+
+### Module 04 — Cyber Archives II · *File I/O & Streams*
+Managing data persistence and system streams. Covers reading and writing files, context
+managers with the `with` statement, stdout/stderr separation, and building secure
+file-handling systems.
+
+### Module 05 — Code Nexus · *Protocols & Pipelines*
+Advanced OOP architecture. Covers abstract base classes, Python Protocols for structural
+typing, multi-stage processing pipelines, adapter patterns, and polymorphic stream
+processing with error recovery.
+
+### Module 06 — The Codex · *Python Import System*
+Deep dive into Python's module system. Covers `__init__.py` and package initialization,
+absolute vs relative imports, controlling public interfaces, and resolving circular
+dependencies using deferred imports.
+
+### Module 07 — DataDeck · *Design Patterns & Multiple Inheritance*
+Building a trading card game engine to explore advanced OOP patterns. Covers the Abstract
+Factory and Strategy patterns, multiple inheritance with ABC interfaces, and progressive
+architecture across five interconnected exercise layers.
+
+### Module 08 — The Matrix · *Environment & Package Management*
+Real-world Python tooling for data engineering. Covers virtual environment creation and
+detection, dependency management with pip and Poetry, and secure configuration using
+environment variables and `.env` files with python-dotenv.
+
+### Module 09 — Cosmic Data · *Pydantic v2 Data Validation*
+Production-grade data validation using Pydantic v2. Covers BaseModel and Field
+constraints, custom validation logic with `@model_validator`, enum-based type safety,
+and nested model relationships for complex data structures.
+
+---
+
+## Technical Requirements
+
+- Python 3.10 or later
+- flake8 linter compliance across all modules
+- Type hints on all functions and methods
+- Virtual environment recommended for modules 07+
+
+## Dependencies
 ```
-module_xx/
-├── ex0/
-├── ex1/
-├── ex2/
-├── ex3/
-├── ex4/
-├── ex5/
-└── ex6/
+pydantic>=2.0    pandas    numpy    matplotlib    python-dotenv    requests
 ```
 
-Each exercise is self-contained and focuses on mastering a specific concept.
+## Execution
 
----
-
-## 🧠 Concepts Covered
-
-### 🔹 Error Handling & Exceptions
-- Try / Except / Finally blocks
-- Custom exception classes
-- Raising and catching errors properly
-- Graceful program recovery
-
-### 🔹 Python Data Structures
-- Lists: analytics, statistics, filtering
-- Tuples: immutable data (coordinates, positions)
-- Sets: unique collections and set operations
-- Dictionaries: inventory systems and nested data
-
-### 🔹 Advanced Python Features
-- Generators and `yield` for memory-efficient streams
-- List, dict, and set comprehensions
-- Command-line argument processing (`sys.argv`)
-
----
-
-## 🧪 Learning Philosophy
-
-- Focus on **clarity over complexity**
-- Use **realistic data scenarios**
-- Avoid unnecessary features
-- Follow Python best practices
-- Learn by building, breaking, and fixing
-
----
-
-## ▶️ How to Run the Exercises
-
-Each exercise can be run independently from the command line:
-
+Modules 07+ use Python's package system and must be run from the repository root:
 ```bash
-python3 file_name.py [arguments]
+python3 -m exN.main
 ```
 
-Example:
-
+Earlier modules run as standalone scripts:
 ```bash
-python3 ft_score_analytics.py 1500 2300 1800 2100
+python3 script_name.py [arguments]
 ```
 
 ---
 
-## 🎯 Goals of This Repository
+## Author
 
-- Strengthen Python fundamentals
-- Understand data engineering patterns
-- Learn to choose the right data structure
-- Write clean, readable, and maintainable code
-- Build confidence for larger projects
-
----
-
-## 🚧 Work in Progress
-
-This repository will continue to grow as new modules and exercises are added.
-Refactoring and improvements may happen as my Python skills evolve.
-
----
-
-## 👤 Author
-
-**Yasir**  
-Web Developer & Python Learner  
-Passionate about programming, problem solving, and continuous learning ☕
+**Yasir** — 42 School Student
